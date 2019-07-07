@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { BankComponent } from './bank/bank.page';
+import { Bank2Component } from './bank2/bank2.page';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -16,10 +17,11 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import {ContatoListaPage } from './listar/listar.page';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import {ContatoLista2Page } from './listar2/listar2.page';
 
 
 @NgModule({
-  declarations: [AppComponent,ContatoListaPage, BankComponent, CadastroComponent, EntrarComponent, CalculoComponent, ResultadoComponent, RelatoComponent],
+  declarations: [AppComponent,ContatoListaPage,ContatoLista2Page, BankComponent, Bank2Component, CadastroComponent, EntrarComponent, CalculoComponent, ResultadoComponent, RelatoComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, AngularFireModule.initializeApp({ apiKey: "AIzaSyAQZlj89YAiHri2tPZBNuZ2knVr4WVEB_w",
     authDomain: "medepe-9e19a.firebaseapp.com",

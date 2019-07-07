@@ -6,7 +6,9 @@ import { CalculoComponent } from './calculo/calculo.page';
 import { ResultadoComponent } from './resultado/resultado.page';
 import { RelatoComponent } from './relato/relato.page';
 import { BankComponent } from './bank/bank.page';
+import { Bank2Component } from './bank2/bank2.page';
 import {ContatoListaPage } from './listar/listar.page';
+import {ContatoLista2Page } from './listar2/listar2.page';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
@@ -18,8 +20,12 @@ const routes: Routes = [
 
   { path: 'bank', component: BankComponent },
   { path: 'listar', component:  ContatoListaPage },
+   { path: 'bank2', component: Bank2Component },
+{ path: 'listar2', component:  ContatoLista2Page },
 
-  { path: 'banco', loadChildren: './banco/banco.module#BancoPageModule' }
+
+
+
 ];
 
 @NgModule({

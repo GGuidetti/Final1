@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let cadastro of listaContatos | async">
+        <ion-label>{{ cadastro.nome }}</ion-label>
+      <br>
+
+
+    </ion-item>
+  </ion-list>
+  <ion-button  expand="block" color="primary" href="calculo">Voltar a tela de calculo</ion-button>
+</ion-content>

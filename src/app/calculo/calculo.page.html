@@ -1,4 +1,4 @@
-<ion-header>
+﻿<ion-header>
   <ion-toolbar>
     <ion-title>
     CALCULO
@@ -13,11 +13,22 @@
 
     <ion-img src="../assets/icon/Screenshot_298.png"></ion-img>
     <p><b>Qual o comprimento do seu pé?</b></p>
-    <ion-input [(ngModel)] = "comp"></ion-input>
-    <p><b>Qual a largura do seu pé?</b></p>
-    <ion-input [(ngModel)] = "large"> </ion-input>
+    <ion-button (click)="a()"  color="success" href="resultado" > 22.5 </ion-button>
+    <ion-button (click)="b()"color="success" href="resultado" > 23 </ion-button>
+    <ion-button (click)="c()"color="success" href="resultado" > 23.5 </ion-button>
+    <ion-button (click)="d()"color="success" href="resultado" > 24 </ion-button>
+    <ion-button (click)="e()"color="success" href="resultado" > 24.5 </ion-button>
+    <ion-button (click)="f()"color="success" href="resultado" > 25 </ion-button>
+    <ion-button (click)="g()" color="success" href="resultado" > 25.5 </ion-button>
+    <ion-button (click)="h()" color="success" href="resultado" > 26 </ion-button>
+    <ion-button (click)="i()"  color="success" href="resultado" > 26.5 </ion-button>
+    <ion-button (click)="j()"  color="success" href="resultado" > 27 </ion-button>
+    <ion-button (click)="k()" color="success" href="resultado" > 27.5 </ion-button>
+    <ion-button (click)="l()" color="success" href="resultado" > 28 </ion-button>
 
-    <ion-button  expand="block" color="medium" href="resultado" > Calcular </ion-button>
+<ion-button  expand="block" color="primary" href="home">Voltar a tela de login</ion-button>
+
+
 
 
 </ion-content>

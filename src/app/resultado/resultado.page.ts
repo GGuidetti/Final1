@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import { Bank2Component } from '../bank2/bank2.page';
+import { AngularFireDatabase } from '@angular/fire/database';
 @Component({
 
     selector: 'resultado-page',
@@ -17,4 +19,14 @@ export class ResultadoComponent{
 
 
     }
+    cadastro: Bank2Component = new Bank2Component();
+      constructor(private banco: AngularFireDatabase) { }
+
+      ngOnInit() {
+      }
+    listar2(){
+      this.banco.list('cadastro').push(this.cadastro);
+      this.cadastro = new Bank2Component();
+
+}
 }
