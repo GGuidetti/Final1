@@ -10,14 +10,14 @@
 
   <div class="ion-padding">
     <p><b>Login</b></p>
-    <ion-input [(ngModel)]="valor">
-      </ion-input>
+    <ion-input [(ngModel)]="usuario.email"></ion-input>
       <p><b>Senha</b></p>
-    <ion-input [(ngModel)]="valor2">
+    <ion-input [(ngModel)]="usuario.senha"></ion-input>
 
-  </ion-input>
+
   <ion-button  expand="block" color="primary" href="cadastro" > Cadastre-se </ion-button>
-  <ion-button  expand="block" color="success" href="calculo">Entrar</ion-button>
+    <ion-button (click)="logar()"  expand="block" color="success">Entrar</ion-button>
+
   <ion-img src="../assets/icon/Screenshot_294.png"></ion-img>
 
 </div>

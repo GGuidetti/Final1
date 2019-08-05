@@ -21,7 +21,8 @@ const routes: Routes = [
   { path: 'bank', component: BankComponent },
   { path: 'listar', component:  ContatoListaPage },
    { path: 'bank2', component: Bank2Component },
-{ path: 'listar2', component:  ContatoLista2Page },
+{ path: 'listar2', component:  ContatoLista2Page },  { path: 'pagina', loadChildren: './pagina/pagina.module#PaginaPageModule' },
+
 
 
 
