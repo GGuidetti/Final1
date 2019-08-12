@@ -22,6 +22,8 @@ const routes: Routes = [
   { path: 'listar', component:  ContatoListaPage },
    { path: 'bank2', component: Bank2Component },
 { path: 'listar2', component:  ContatoLista2Page },  { path: 'pagina', loadChildren: './pagina/pagina.module#PaginaPageModule' },
+  { path: 'salvar', loadChildren: './cidade/salvar/salvar.module#SalvarPageModule' },
+  { path: 'listar', loadChildren: './cidade/listar/listar.module#ListarPageModule' },
 
 
 
