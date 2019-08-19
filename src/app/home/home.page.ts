@@ -17,7 +17,20 @@ usuario: Usuario = new Usuario();
 ).catch( (erro) => alert('erro') );
   }
 
+
   logout() {
 this.afAuth.auth.signOut();
 this.router.navigate(['/']);
-}}
+}
+
+  redefinir() {
+    alert('verifique seu email') ;
+this.afAuth.auth.sendPasswordResetEmail(this.usuario.email).then(
+() => alert('verifique seu email') ); { this.router.navigate([]); }
+
+
+
+
+
+}
+}
