@@ -22,6 +22,9 @@ export class ContatoLista2Page implements OnInit {
   ngOnInit() {
   }
 
+  excluir (chave) {
+    this.fire.list('cadastro').remove(chave);
+    alert("excluído");
 
-
+}
 }
