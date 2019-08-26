@@ -20,8 +20,12 @@ export class ContatoListaPage implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
-
+excluir (chave) {
+  this.fire.list('relato').remove(chave);
+  alert("excluído");
+}
 
 }
