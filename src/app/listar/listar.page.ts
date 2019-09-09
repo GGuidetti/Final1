@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
-import {RelatoComponent } from '../relato/relato.page';
+import { RelatoComponent } from '../relato/relato.page';
 import { map } from 'rxjs/operators'
 import { BankComponent } from '../bank/bank.page';
 import { Router, NavigationExtras } from '@angular/router';
 import * as _ from 'lodash';
+import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'listar-page',
   templateUrl: 'listar.page.html'
@@ -17,26 +18,33 @@ export class ContatoListaPage implements OnInit {
   relato: any;
   valor: string;
 
-  constructor(private fire: AngularFireDatabase, private rota: Router) {
+  constructor(private fire: AngularFireDatabase, private rota: Router, private modal: ModalController) {
     this.listaContatos = this.fire.list('relato').snapshotChanges().pipe(
-      map( lista => lista.map(linha => ({ key: linha.payload.key, ... linha.payload.val() })))
+      map(lista => lista.map(linha => ({ key: linha.payload.key, ...linha.payload.val() })))
     );
   }
 
   ngOnInit() {
     this.listaContatos.subscribe(tenis => {
-        this.relato = tenis;
-        this.listaFiltro = _.filter(this.relato, _.conforms(this.filtro));
+      this.relato = tenis;
+      this.listaFiltro = _.filter(this.relato, _.conforms(this.filtro));
     })
   }
 
-  filtrar(){
+  filtrar() {
     this.filtro['modelo'] = val => val.includes(this.valor);
     this.listaFiltro = _.filter(this.relato, _.conforms(this.filtro));
   }
-excluir (chave) {
-  this.fire.list('relato').remove(chave);
-  alert("excluído");
-}
+  excluir(chave) {
+    this.fire.list('relato').remove(chave);
+    alert("excluído");
+  }
+
+  async alterar(relato) {
+    const tela = await this.modal.create({
+      component: RelatoComponent, componentProps: { relato: relato }
+    });
+    tela.present();
+  }
 
 }

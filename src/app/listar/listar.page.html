@@ -13,8 +13,9 @@
       <br>
         <ion-label>{{ relato.problema }}</ion-label>
         <ion-button color="danger" (click)='excluir(relato.key)'><ion-icon name="close-circle"></ion-icon></ion-button>
-        <ion-button  (click)='excluir(relato.key)'><ion-icon name="create"></ion-icon></ion-button>
 
+        <ion-button (click)="alterar(relato)"> <ion-icon name="create"></ion-icon>
+        </ion-button>
     </ion-item>
   </ion-list>
   <ion-button  expand="block" color="primary" href="calculo">Voltar a tela de calculo</ion-button>
