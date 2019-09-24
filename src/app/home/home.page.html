@@ -17,7 +17,7 @@
         position='floating'>Login
 
       </ion-label>
-      <ion-input #login='ngModel' type='text' [(ngModel)]='usuario.email' name='usuario.email' required>
+      <ion-input #login='ngModel' type='text' [(ngModel)]='cadastro.email' name='cadastro.email' required>
       </ion-input>
       </ion-item>
       <span style='color:red' *ngIf='login.errors && login.touched'>
@@ -28,7 +28,7 @@
         position='floating'>Senha
 
       </ion-label>
-      <ion-input #senha='ngModel' type='text' [(ngModel)]='usuario.senha' name='usuario.senha' required>
+      <ion-input #senha='ngModel' type='text' [(ngModel)]='cadastro.senha' name='cadastro.senha' required>
       </ion-input>
       </ion-item>
       <span style='color:red' *ngIf='senha.errors && senha.touched'>
