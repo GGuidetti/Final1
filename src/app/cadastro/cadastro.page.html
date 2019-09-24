@@ -9,17 +9,46 @@
 <ion-content>
 
   <div class="ion-padding">
-    <p><b>Nome de Usuário</b></p>
-    <ion-input [(ngModel)]="cadastro.nome">
-      </ion-input>
-    <p><b>e-mail</b></p>
-    <ion-input [(ngModel)]="usuario.email">
-      </ion-input>
-      <p><b>Senha</b></p>
-    <ion-input [(ngModel)]="usuario.senha">
+    <form #myForm='ngForm'>
+    <ion-item>
+    <ion-label
+      position='floating'>Nome de usuário
 
+    </ion-label>
+    <ion-input #cadastro='ngModel' type='text' [(ngModel)]='cadastro.nome' name='cadastro.nome' required>
+    </ion-input>
+    </ion-item>
+    <span style='color:red' *ngIf='cadastro.errors && cadastro.touched'>
+    <ion-label> O Nome de cadastro é obrigatorio!</ion-label>
+  </span>
+
+  <ion-item>
+  <ion-label
+    position='floating'>E-mail
+
+  </ion-label>
+  <ion-input #cadastro='ngModel' type='text' [(ngModel)]='cadastro.email' name='cadastro.email' required>
   </ion-input>
-  <ion-button (click)='salvar()' expand="block" color="success" href="calculo" > Cadastrar </ion-button>
+  </ion-item>
+  <span style='color:red' *ngIf='cadastro.errors && cadastro.touched'>
+  <ion-label> O E-mail é obrigatorio!</ion-label>
+</span>
+<ion-item>
+<ion-label
+  position='floating'>Senha
+
+</ion-label>
+<ion-input #senha='ngModel' type='text' [(ngModel)]='cadastro.senha' name='cadastro.senha' required>
+</ion-input>
+</ion-item>
+<span style='color:red' *ngIf='senha.errors && senha.touched'>
+<ion-label> A Senha é obrigatoria!</ion-label>
+</span>
+</form>
+
+
+
+  <ion-button [disabled]='!myForm.form.valid' (click)='salvar()' expand="block" color="success" href="calculo" > Cadastrar </ion-button>
 
   <ion-img src="../assets/icon/Screenshot_297.png"></ion-img>
 

@@ -18,14 +18,10 @@ cadastro: Banco = new Banco();
 
   ngOnInit() {
   }
-salvar(){
-  this.banco.list('cadastro').push(this.cadastro);
+  salvar(){
+    this.banco.list('cadastro').push(this.cadastro);
+    
+    this.cadastro = new Banco();
 
-  this.cadastro = new Banco();
-
-  this.angularfireauth.auth.createUserWithEmailAndPassword(this.usuario.email, this.usuario.senha).then(
-  () => { this.router.navigate(['calculo']); }
-).catch( (erro) => alert('erro') );
-
-}
-}
+  }
+  }

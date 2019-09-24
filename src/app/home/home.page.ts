@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from "angularfire2/auth";
 import { Router } from '@angular/router';
-import { Usuario } from '../entidade/usuário';
+import { Banco } from '../entidade/banco';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-usuario: Usuario = new Usuario();
+cadastro: Banco = new Banco();
   constructor(private afAuth: AngularFireAuth, private router: Router) {}
 
   logar(){
-  this.afAuth.auth.signInWithEmailAndPassword(this.usuario.email, this.usuario.senha).then(
+  this.afAuth.auth.signInWithEmailAndPassword(this.cadastro.email, this.cadastro.senha).then(
   () => { this.router.navigate(['calculo']); }
 ).catch( (erro) => alert('erro') );
   }
@@ -25,7 +25,7 @@ this.router.navigate(['/']);
 
   redefinir() {
     alert('verifique seu email') ;
-this.afAuth.auth.sendPasswordResetEmail(this.usuario.email).then(
+this.afAuth.auth.sendPasswordResetEmail(this.cadastro.email).then(
 () => alert('verifique seu email') ); { this.router.navigate([]); }
 
 
