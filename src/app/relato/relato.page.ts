@@ -18,11 +18,11 @@ import { ModalController } from '@ionic/angular';
 })
 export class RelatoComponent implements OnInit {
 
-relato: BankComponent = new BankComponent();
+relato: any
   listaContatos: Observable<any[]>;
   listaFiltro: any[];
   filtro = {}; //regras ativas do filtro
-  
+
   valor: string;
   constructor(private banco: AngularFireDatabase, private rota: Router, private modal: ModalController) {
     this.listaContatos = this.banco.list('relato').snapshotChanges().pipe(

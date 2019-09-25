@@ -9,6 +9,7 @@ import { BankComponent } from './bank/bank.page';
 import { Bank2Component } from './bank2/bank2.page';
 import {ContatoListaPage } from './listar/listar.page';
 import {ContatoLista2Page } from './listar2/listar2.page';
+import { Banco } from './entidade/banco';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
