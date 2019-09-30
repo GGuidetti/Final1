@@ -18,6 +18,7 @@ import { AngularFireModule } from '@angular/fire';
 import {ContatoListaPage } from './listar/listar.page';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import {ContatoLista2Page } from './listar2/listar2.page';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import {ContatoLista2Page } from './listar2/listar2.page';
 }), AngularFireDatabaseModule ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen, AngularFireAuth,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

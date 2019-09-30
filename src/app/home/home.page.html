@@ -17,7 +17,7 @@
         position='floating'>Login
 
       </ion-label>
-      <ion-input #login='ngModel' type='text' [(ngModel)]='cadastro.email' name='cadastro.email' required>
+      <ion-input #login='ngModel' type='text' [(ngModel)]='cadastro.email' name='email' required>
       </ion-input>
       </ion-item>
       <span style='color:red' *ngIf='login.errors && login.touched'>
@@ -28,7 +28,7 @@
         position='floating'>Senha
 
       </ion-label>
-      <ion-input #senha='ngModel' type='text' [(ngModel)]='cadastro.senha' name='cadastro.senha' required>
+      <ion-input #senha='ngModel' type='text' [(ngModel)]='cadastro.senha' name='senha' required>
       </ion-input>
       </ion-item>
       <span style='color:red' *ngIf='senha.errors && senha.touched'>
@@ -39,6 +39,7 @@
 
 <ion-button [disabled]='!meuForm.form.valid'  (click)='logar()' expand='block' color="success"> Entrar </ion-button>
       <ion-button (click)="redefinir()"  expand="block" color="dark">Esqueceu a senha?</ion-button>
+
 
   <ion-img src="..\assets\icon\adidas-Harden-Vol-3-White-Black-For-Sale.jpeg (1).jpg"></ion-img>
 
