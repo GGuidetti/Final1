@@ -12,18 +12,18 @@ import { Router } from '@angular/router';
 })
 export class CadastroComponent implements OnInit {
 
-cadastro: Banco = new Banco();
-constructor(private banco: AngularFireDatabase, private afAuth: AngularFireAuth, private router :  Router) { }
+  cadastro: Banco = new Banco();
+  constructor(private banco: AngularFireDatabase, private afAuth: AngularFireAuth, private router: Router) { }
 
 
   ngOnInit() {
   }
 
-salvar(){
-  this.banco.list('cadastro').push(this.cadastro);
+  salvar() {
+    this.banco.list('cadastro').push(this.cadastro);
 
-   this.afAuth.auth.createUserWithEmailAndPassword(this.cadastro.email, this.cadastro.senha);
-this.router.navigate(['calculo']);
+    this.afAuth.auth.createUserWithEmailAndPassword(this.cadastro.email, this.cadastro.senha);
+    this.router.navigate(['calculo']);
 
-}
+  }
 }

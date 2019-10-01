@@ -9,36 +9,35 @@
 
 
 
-  <ion-content>
-<form #meuForm='ngForm'>
+<ion-content>
+  <form #meuForm='ngForm'>
 
-      <ion-item>
-      <ion-label
-        position='floating'>Login
+    <ion-item>
+      <ion-label position='floating'>Login
 
       </ion-label>
       <ion-input #login='ngModel' type='text' [(ngModel)]='cadastro.email' name='email' required>
       </ion-input>
-      </ion-item>
-      <span style='color:red' *ngIf='login.errors && login.touched'>
+    </ion-item>
+    <span style='color:red' *ngIf='login.errors && login.touched'>
       <ion-label> O login é obrigatorio!</ion-label>
     </span>
-      <ion-item>
-      <ion-label
-        position='floating'>Senha
+    <ion-item>
+      <ion-label position='floating'>Senha
 
       </ion-label>
-      <ion-input #senha='ngModel' type='text' [(ngModel)]='cadastro.senha' name='senha' required>
+      <ion-input #senha='ngModel' type='password' [(ngModel)]='cadastro.senha' name='senha' required>
       </ion-input>
-      </ion-item>
-      <span style='color:red' *ngIf='senha.errors && senha.touched'>
-      <ion-label> O senha é obrigatorio!</ion-label></span>
-</form>
+    </ion-item>
+    <span style='color:red' *ngIf='senha.errors && senha.touched'>
+      <ion-label> O senha é obrigatorio!</ion-label>
+    </span>
+  </form>
 
-  <ion-button  expand="block" color="primary" href="cadastro" > Cadastre-se </ion-button>
+  <ion-button expand="block" color="primary" href="cadastro"> Cadastre-se </ion-button>
 
-<ion-button [disabled]='!meuForm.form.valid'  (click)='logar()' expand='block' color="success"> Entrar </ion-button>
-      <ion-button (click)="redefinir()"  expand="block" color="dark">Esqueceu a senha?</ion-button>
+  <ion-button [disabled]='!meuForm.form.valid' (click)='logar()' expand='block' color="success"> Entrar </ion-button>
+  <ion-button (click)="redefinir()" expand="block" color="dark">Esqueceu a senha?</ion-button>
 
 
   <ion-img src="..\assets\icon\adidas-Harden-Vol-3-White-Black-For-Sale.jpeg (1).jpg"></ion-img>

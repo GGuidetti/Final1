@@ -8,29 +8,29 @@ import { Banco } from '../entidade/banco';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-cadastro: Banco = new Banco();
-  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+  cadastro: Banco = new Banco();
+  constructor(private afAuth: AngularFireAuth, private router: Router) { }
 
-  logar(){
-  this.afAuth.auth.signInWithEmailAndPassword(this.cadastro.email, this.cadastro.senha).then(
-  () => { this.router.navigate(['calculo']); }
-).catch( (erro) => alert('erro') );
+  logar() {
+    this.afAuth.auth.signInWithEmailAndPassword(this.cadastro.email, this.cadastro.senha).then(
+      () => { this.router.navigate(['calculo']); }
+    ).catch((erro) => alert('erro'));
   }
 
 
   logout() {
-this.afAuth.auth.signOut();
-this.router.navigate(['/']);
-}
+    this.afAuth.auth.signOut();
+    this.router.navigate(['/']);
+  }
 
   redefinir() {
-    alert('verifique seu email') ;
-this.afAuth.auth.sendPasswordResetEmail(this.cadastro.email).then(
-() => alert('verifique seu email') ); { this.router.navigate([]); }
+    alert('verifique seu email');
+    this.afAuth.auth.sendPasswordResetEmail(this.cadastro.email).then(
+      () => alert('verifique seu email')); { this.router.navigate([]); }
 
 
 
 
 
-}
+  }
 }

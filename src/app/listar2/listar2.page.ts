@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
-import {CadastroComponent } from '../cadastro/cadastro.page';
+import { CadastroComponent } from '../cadastro/cadastro.page';
 import { map } from 'rxjs/operators'
 
 @Component({
@@ -14,7 +14,7 @@ export class ContatoLista2Page implements OnInit {
     this.listaContatos = this.fire.list('cadastro').snapshotChanges().pipe(
       map(lista => lista.map(linha => ({
         key: linha.payload.key, ...linha.payload.val()
-      }) ))
+      })))
     );
 
   }
@@ -22,9 +22,9 @@ export class ContatoLista2Page implements OnInit {
   ngOnInit() {
   }
 
-  excluir (chave) {
+  excluir(chave) {
     this.fire.list('cadastro').remove(chave);
     alert("excluído");
 
-}
+  }
 }
